@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --space-xs: 1vmin;
+  --space-s: 2vmin;
+  --space-m: 4vmin;
+}
+
+body {
+  margin: 0;  
+  font-family: 'Cascadia Code', Consolas, monospace;
+}
+
+input, button {
+  font: inherit;
+  padding: var(--space-xs);
+}
+
+summary {
+  cursor: pointer;
+  margin-bottom: var(--space-xs);
+}
+
+abbr {
+  cursor: help;
+}
+
+h1, h2, dt, p {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: var(--space-s);
+}
+
+dt {
+  margin-top: var(--space-m);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
