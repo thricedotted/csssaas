@@ -9,9 +9,10 @@
     "prepare": "svelte-kit sync"
   },
   "devDependencies": {
-    "@sveltejs/adapter-vercel": "next",
+    "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "@zerodevx/svelte-json-view": "^0.2.1",
+    "canvas": "^2.9.1",
     "himalaya": "^1.1.0",
     "jsdom": "^19.0.0",
     "svelte": "^3.44.0"
