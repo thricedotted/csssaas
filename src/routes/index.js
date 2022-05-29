@@ -16,10 +16,6 @@ export async function get({ url, request }) {
     include.push('textContent')
   }
 
-  if (include.includes('textContent')) {
-    include.push('content')
-  }
-
   if (!queryUrl || queryUrl.length === 0) {
     return {
       body: {}
@@ -69,6 +65,12 @@ async function urlToJson(url, selector, include) {
 
       const contentType = headers.get('Content-Type')
 
+      const keys = [...include]
+
+      if (keys.includes('textContent')) {
+        keys.push('content')
+      }
+
       if (contentType.includes('text/html')) {
         const html = await res.text()
         const root = parseDocument(html)
@@ -82,7 +84,7 @@ async function urlToJson(url, selector, include) {
             textContent: textContent(x)
           }
 
-          return filterKeys(obj, include)
+          return filterKeys(obj, keys)
         })
       }
 

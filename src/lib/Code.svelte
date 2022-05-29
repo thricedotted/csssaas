@@ -11,13 +11,14 @@
 </script>
 
 <code>
-  <pre>const query = &lbrace;
+  <pre>const searchParams = new URLSearchParams(&lbrace;
   url: `{url}`,
   selector: `{selector}`,
-  include: {JSON.stringify(include)}
-&rbrace;
+&rbrace;)
 
-const searchParams = new URLSearchParams(query)
+const include = {JSON.stringify(include)}
+
+include.forEach(i => searchParams.append('include', i))
 
 const res = await fetch(
   `{$page.url.origin}?$&lbrace;searchParams&rbrace;`,
