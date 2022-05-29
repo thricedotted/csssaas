@@ -45,8 +45,13 @@ export async function get({ url, request }) {
     // unless JSON is explicitly requested, respond with OK and show error in web interface
     const jsonRequest = request.headers.get('Accept').includes('application/json')
 
+    const headers = jsonRequest 
+                    ? { 'Access-Control-Allow-Origin': '*' }
+                    : {}
+
     return {
       status: jsonRequest ? status : 200,
+      headers,
       body: { 
         query: {
           url: queryUrl,
