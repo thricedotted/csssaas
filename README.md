@@ -1,5 +1,9 @@
 # CSS Selectors as a Service
 
+(This app is built in SvelteKit, all the text below is How To Run SvelteKit.)
+
+---
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
