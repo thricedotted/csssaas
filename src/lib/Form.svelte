@@ -25,7 +25,6 @@
     <input 
       type="url" 
       name="url"
-      placeholder="https://policies.google.com/privacy"
       bind:value={query.url}
     />
   </label>
@@ -37,7 +36,6 @@
     <input 
       type="text" 
       name="selector"
-      placeholder="p > a"
       bind:value={query.selector}
     />
   </label>

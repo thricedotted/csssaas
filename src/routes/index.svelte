@@ -7,8 +7,8 @@
   import { JsonView } from '@zerodevx/svelte-json-view'
 
   export let query = { 
-    url: '', 
-    selector: '',
+    url: 'https://policies.google.com/privacy', 
+    selector: 'p > a',
     include: ['tagName', 'textContent']
   }
 
