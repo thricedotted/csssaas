@@ -12,9 +12,10 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "@zerodevx/svelte-json-view": "^0.2.1",
-    "canvas": "^2.9.1",
+    "css-select": "^5.1.0",
+    "dom-serializer": "^2.0.0",
     "himalaya": "^1.1.0",
-    "jsdom": "^19.0.0",
+    "htmlparser2": "^8.0.1",
     "svelte": "^3.44.0"
   },
   "type": "module"

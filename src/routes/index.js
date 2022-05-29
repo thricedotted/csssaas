@@ -1,5 +1,8 @@
+import { parseDocument } from 'htmlparser2'
+import { selectAll } from 'css-select'
+import { textContent } from 'domutils'
+import render from 'dom-serializer'
 import { parse } from 'himalaya'
-import { JSDOM } from 'jsdom'
 
 export async function get({ url, request }) {
   const { searchParams } = url
@@ -67,15 +70,16 @@ async function urlToJson(url, selector, include) {
       const contentType = headers.get('Content-Type')
 
       if (contentType.includes('text/html')) {
-        const { document } = (new JSDOM(await res.text())).window
-        const elementArray = Array.from(document.querySelectorAll(selector))
+        const html = await res.text()
+        const root = parseDocument(html)
+        const elementArray = selectAll(selector, root)
 
         return elementArray.map(x => { 
-          const parsed = parse(x.outerHTML)[0]
+          const parsed = parse(render(x))[0]
 
           const obj = {
             ...parsed,
-            textContent: x.textContent
+            textContent: textContent(x)
           }
 
           return filterKeys(obj, include)
