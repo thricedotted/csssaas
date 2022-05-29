@@ -9,7 +9,7 @@
   export let query = { 
     url: '', 
     selector: '',
-    include: []
+    include: ['tagName', 'textContent']
   }
 
   export let data
@@ -83,7 +83,7 @@
 
       <dt>How?</dt>
       <dd>
-        <p>Well. We just... fetch the website and select the Good Parts with <a href="https://www.npmjs.com/package/jsdom">JSDOM</a> and get a workable JSON representation with <a href="https://www.npmjs.com/package/himalaya">himalaya</a>.</p>
+        <p>Well. We just... fetch the website and select the Good Parts with <a href="https://www.npmjs.com/package/htmlparser2">htmlparser2 and friends</a> and get a workable JSON representation with <a href="https://www.npmjs.com/package/himalaya">himalaya</a>. Anyway, yes the code is on <a href="https://github.com/thricedotted/csssaas">github</a>.</p>
       </dd>
 
       <dt>Is this a proxy? A scraper?</dt>

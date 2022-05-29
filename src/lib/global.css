@@ -21,6 +21,7 @@ input, button {
 summary {
   cursor: pointer;
   margin-bottom: var(--space-xs);
+  user-select: none;
 }
 
 abbr {
